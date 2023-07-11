@@ -15,9 +15,17 @@ const productos = [
 let elCarrito = []
 let totalPrecio = 0
 let elCarritoJSON= JSON.parse(localStorage.getItem("elCarrito"))
+let totalPrecioJSON = localStorage.getItem("totalPrecio")
+
 
 if (elCarritoJSON) {
     elCarrito = elCarritoJSON
+}
+
+if (totalPrecioJSON) {
+    totalPrecio = parseFloat(totalPrecioJSON)
+} else {
+    totalPrecio = 0
 }
 
 let contenedor = document.getElementById("productos")
@@ -63,6 +71,7 @@ function agregarAlCarrito(e) {
     renderizarCarrito()
 
     localStorage.setItem("elCarrito", JSON.stringify(elCarrito))
+    localStorage.setItem("totalPrecio", totalPrecio.toString())
 }
 
 function renderizarCarrito() {
@@ -78,7 +87,7 @@ function renderizarCarrito() {
         `
     })
 
-    let cantidadItems = elCarrito.reduce((total, elemento) => total + (elemento.cantidad || 0), 0)
+    let cantidadItems = elCarrito.reduce((total, elemento) => total + elemento.cantidad, 0)
     let cantidadCarrito = document.getElementById("cantidadCarrito")
     cantidadCarrito.textContent = cantidadItems
     
@@ -156,13 +165,21 @@ function mostrarOcultar () {
 }
 
 function eliminarDelCarrito(e) {
-    let idProducto = Number(e.target.dataset.id)  
-    let productoEliminado = productos.find(producto => producto.id === idProducto)
-    totalPrecio -= productoEliminado.precio
-    elCarrito = elCarrito.filter(elemento => elemento.id !== idProducto)
+    let idProducto = Number(e.target.dataset.id)
+    let productoEliminado = productos.find((producto) => producto.id === idProducto)
     
+    let productoEnCarrito = elCarrito.find((elemento) => elemento.id === idProducto)
+    if (productoEnCarrito) {
+      totalPrecio -= productoEliminado.precio * productoEnCarrito.cantidad
+      elCarrito = elCarrito.filter((elemento) => elemento.id !== idProducto)
+      
+      if (elCarrito.length === 0) {
+        totalPrecio = 0
+      }
+    }
     renderizarCarrito()
     localStorage.setItem("elCarrito", JSON.stringify(elCarrito))
+    localStorage.setItem("totalPrecio", totalPrecio.toString())
 }
 
 function sumarItem(e) {
