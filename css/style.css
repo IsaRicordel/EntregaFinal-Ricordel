@@ -1,0 +1,166 @@
+/* reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* html INDEX */
+/* estilos de Header */
+
+header{
+    background-color: #ffe4c4;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.navbar-brand{
+    padding-top: 5px;
+    margin: 10px;
+    font-weight: 800;
+    -webkit-text-stroke: 0.7px saddlebrown;
+}
+
+header nav ul li{
+
+    text-align: center;
+    font-size: 15px;
+    padding: 1px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: rgba(233, 166, 108, 0.952);
+}
+
+
+/* Para html PRODUCTOS */
+
+/* Para Main */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(40vh - 160px);
+    color: rgb(74, 134, 74);
+    
+}
+
+#granContenedor {
+    margin-bottom: 90px;
+}
+
+.contenedor-filtros-buscar-carrito {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#filtros {
+    display: flex;
+    gap: 10px;
+    margin-left: 90px;
+}
+
+#nombre-prod {
+    margin-top: 10px;
+}
+
+.contenedor-buscar-carrito{
+    display: flex;
+    gap: 10px;
+}
+
+#botonCarrito {
+    margin-right: 90px;
+}
+ 
+#productos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn-filtro{
+    background-color: transparent;
+    color:#4CAF50;
+    border-color: transparent;
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: underline;
+    padding: 5px;
+}
+
+.btn-filtro:hover{
+    color:rgba(219, 193, 75, 0.952);
+}
+
+.tarjetaProducto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #ffe4c4;
+    border-radius: 10px;
+    margin: 1px;
+}
+
+.imagen {
+    width: 180px;
+    height: 180px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#elCarrito {
+    border: 1px solid black;
+    width: 600px;
+    height: 400px;
+}
+
+.oculto {
+    display: none;
+}
+
+.producto-carrito {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+  
+.eliminar {
+    margin-left: auto;
+    color: #4CAF50; 
+    border: 2px solid #4CAF50;
+    background-color: transparent;
+    padding: 0 3px 0 3px;  
+}
+
+.a-carrito {
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+.a-carrito:hover {
+    background-color: #45a049;
+}
+
+/*  estilos de Footer */
+
+footer{
+    height: 90px;
+    text-align: center;
+    padding-top: 10px;
+    font-family: 'Fira Sans', sans-serif;
+    background-color: bisque;
+    font-size: 14px;
+}
+
+
+
+
+
