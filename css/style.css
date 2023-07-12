@@ -73,6 +73,8 @@ main {
 
 #botonCarrito {
     margin-right: 90px;
+    background-color: transparent;
+    border-color: transparent;
 }
  
 #productos {
