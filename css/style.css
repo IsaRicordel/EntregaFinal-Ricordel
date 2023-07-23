@@ -95,7 +95,7 @@ main {
 }
 
 .btn-filtro:hover{
-    color:rgba(219, 193, 75, 0.952);
+    color:#dbc14bf3;
 }
 
 .tarjetaProducto {
@@ -116,9 +116,11 @@ main {
 }
 
 #elCarrito {
-    border: 1px solid black;
+    border: 3px solid #276a29;
+    border-radius: 10px;
     width: 600px;
-    height: 400px;
+    height: auto;
+    margin-left: 550px;
 }
 
 .oculto {
@@ -130,14 +132,8 @@ main {
     align-items: center;
     gap: 10px;
 }
-  
-.eliminar {
-    margin-left: auto;
-    color: #4CAF50; 
-    border: 2px solid #4CAF50;
-    background-color: transparent;
-    padding: 0 3px 0 3px;  
-}
+
+/* botón agregar al carrito */
 
 .a-carrito {
     background-color: #4CAF50; 
@@ -149,6 +145,55 @@ main {
 
 .a-carrito:hover {
     background-color: #45a049;
+}
+
+/* botón eliminar */
+
+.eliminar {
+    margin-left: auto;
+    color: #4CAF50; 
+    border: 2px solid #4CAF50;
+    background-color: transparent;
+    padding: 0 3px 0 3px;  
+}
+
+/* Nuevo */
+
+.carritoFinal {
+    display: grid;
+    grid-template-columns: 0.2fr 0.2fr 0.05fr 0.02fr 0.05fr 0.3fr 0.15fr;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+.imagenCarrito{
+    margin-left: 10px;
+    width: 60px;
+}
+
+.carritoSubtotal{
+    margin-left: 20px;
+}
+
+.totales{
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+/* botón finalizar compra */
+
+.compraFinalizada{
+    background: linear-gradient(to right, #dbc14bf3, #4CAF50);
+    color: #276a29; 
+    border: 3px solid #276a29;
+    border-radius: 3px;
+    padding: 10px 10px 10px 10px; 
+    margin-left: 200px;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 30px;
 }
 
 /*  estilos de Footer */
