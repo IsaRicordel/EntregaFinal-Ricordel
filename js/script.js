@@ -31,6 +31,8 @@ fetch(urlLocal)
         console.error("Error al obtener los productos:", error);
     });
 
+const imgBaseUrl = "https://IsaRicordel.github.io/ProyectoFinal-Ricordel/img/"
+
 function crearTarjetas(array) {
     contenedor.innerHTML = ""
     array.forEach(elemento => {
@@ -38,7 +40,7 @@ function crearTarjetas(array) {
         tarjetaProducto.className = "tarjetaProducto"
         tarjetaProducto.innerHTML = `
             <h4 id="nombre-prod">${elemento.nombre}</h4>
-            <img class="imagen" src="img/${elemento.rutaImagen}">
+            <img class="imagen" src="${imgBaseUrl}${elemento.rutaImagen}">
             <h4>$${elemento.precio}</h4>
             <button id=${elemento.id} class="a-carrito">Agregar al carrito</button>
             `
