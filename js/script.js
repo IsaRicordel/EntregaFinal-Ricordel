@@ -81,7 +81,7 @@ function renderizarCarrito() {
         subtotal = Math.round(subtotal)
         carritoFisico.innerHTML += `
         <div class="carritoFinal"> 
-        <img class="imagenCarrito" src="./img/${elemento.imagen}"> ${elemento.nombre} <button class="btn-restar" data-id="${elemento.id}">-</button> ${elemento.cantidad} <button class="btn-sumar" data-id="${elemento.id}">+</button> <div class="carritoSubtotal"> Subtotal: $${subtotal.toFixed(0)}</div> <button class="eliminar" data-id="${elemento.id}">Eliminar</button>
+        <img class="imagenCarrito" src="img/${elemento.imagen}"> ${elemento.nombre} <button class="btn-restar" data-id="${elemento.id}">-</button> ${elemento.cantidad} <button class="btn-sumar" data-id="${elemento.id}">+</button> <div class="carritoSubtotal"> Subtotal: $${subtotal.toFixed(0)}</div> <button class="eliminar" data-id="${elemento.id}">Eliminar</button>
         `
     })
 
