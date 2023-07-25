@@ -31,8 +31,6 @@ fetch(urlLocal)
         console.error("Error al obtener los productos:", error);
     });
 
-const imgBaseUrl = "https://IsaRicordel.github.io/ProyectoFinal-Ricordel/img/"
-
 function crearTarjetas(array) {
     contenedor.innerHTML = ""
     array.forEach(elemento => {
@@ -40,7 +38,7 @@ function crearTarjetas(array) {
         tarjetaProducto.className = "tarjetaProducto"
         tarjetaProducto.innerHTML = `
             <h4 id="nombre-prod">${elemento.nombre}</h4>
-            <img class="imagen" src="${imgBaseUrl}${elemento.rutaImagen}">
+            <img class="imagen" src="img/${elemento.rutaImagen}">
             <h4>$${elemento.precio}</h4>
             <button id=${elemento.id} class="a-carrito">Agregar al carrito</button>
             `
@@ -83,7 +81,7 @@ function renderizarCarrito() {
         subtotal = Math.round(subtotal)
         carritoFisico.innerHTML += `
         <div class="carritoFinal"> 
-        <img class="imagenCarrito" src="../img/${elemento.imagen}"> ${elemento.nombre} <button class="btn-restar" data-id="${elemento.id}">-</button> ${elemento.cantidad} <button class="btn-sumar" data-id="${elemento.id}">+</button> <div class="carritoSubtotal"> Subtotal: $${subtotal.toFixed(0)}</div> <button class="eliminar" data-id="${elemento.id}">Eliminar</button>
+        <img class="imagenCarrito" src="img/${elemento.imagen}"> ${elemento.nombre} <button class="btn-restar" data-id="${elemento.id}">-</button> ${elemento.cantidad} <button class="btn-sumar" data-id="${elemento.id}">+</button> <div class="carritoSubtotal"> Subtotal: $${subtotal.toFixed(0)}</div> <button class="eliminar" data-id="${elemento.id}">Eliminar</button>
         `
     })
 
